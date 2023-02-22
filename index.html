@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+
+.topbuttons {
+  display: block;
+  text-align: center;
+}
+
+  button {
+    font-size: 24px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background-color: #94FEFB;
+    font-family: "Monaco", Monospace;
+    border: 4px solid pink;
+    border-radius: 20px;
+}
+
+    .topbuttons button:hover,
+    .topbuttons button:focus {
+      color: hotpink;
+      background-color: #94FEFB;
+}
+    .topbuttons button:active {
+      color: #94FEFB;
+      background-color: #ec72fc
+}
+
+  </style>
+  <title>videogame-card</title>
+</head>
+
+<body>
+  <div class="topbuttons">
+    <button class="Duplicate">New duplicate</button>
+    <button class="Color">Toggle color</button>
+    <button class="Header">Change heading</button>
+    <button class="Delete">Delete 1 card</button>
+  </div>
+  <videogame-card>
+  <slot>This is a screenshot from a 3D rendered animation posted to Youtube by Valve Corporation to promote the video-game Team Fortress 2. The video is called 'Meet the Pyro'</slot>
+  </videogame-card>
+
+  <script type="module" src="./src/videogame-card.js"></script>
+<!-----------------------------------JS-CUTOFF-------------------------------------------------------------------------------------------->
+  <script>
+//New duplicate button
+document.querySelector('.Duplicate').addEventListener('click', function() {
+  const node1 = document.querySelector('videogame-card').cloneNode();
+  document.body.appendChild(node1);
+});
+
+/*document.querySelector('.Duplicate').addEventListener('click', function() {
+  const node1 = document.querySelector('videogame-card').cloneNode();
+  document.body.appendChild(node1);
+});
+*/
+//Color toggle button
+document.querySelector('.Color').addEventListener('click', function() {
+if (document.querySelector('videogame-card').shadowRoot.getElementById("card1").className == "card")
+  document.querySelector('videogame-card').shadowRoot.getElementById("card1").className = "alt";
+else
+  document.querySelector('videogame-card').shadowRoot.getElementById("card1").className = "card";
+});
+
+//Header toggle button
+document.querySelector('.Header').addEventListener('click', function(e) {
+  let name = prompt("Pick name");
+  if (name) {
+    document.querySelector('videogame-card').name = name;
+  }
+});
+
+//Delete button
+document.querySelector('.Delete').addEventListener('click', function() {
+const list1 = [];
+var onetime = false;
+document.querySelectorAll('videogame-card').forEach((item, index) => {
+  list1.push(index);
+  if (list1.length != 1 && onetime === false) {
+    item.remove();
+    onetime = true;
+  }
+});
+});
+  </script>
+<!-----------------------------------JS-CUTOFF-------------------------------------------------------------------------------------------->
+
+</body>
+</html>
