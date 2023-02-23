@@ -1,12 +1,11 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
-//, import.meta.url
-let character = 'https://images.gamebanana.com/img/ss/mods/54f8f277e231a.webp';
-//https://images.gamebanana.com/img/ss/mods/54f8f277e231a.webp
+
 export class VideogameCard extends LitElement {
   static get properties() {
     return {
-      opened: {type: Boolean, reflect: true},
+      accentColor: {type: String, reflect: true, attribute: 'accent-color'},
+      opened: {type: Boolean, reflect: true, attribute: 'open-status'},
       shadowstatus: {type: Boolean, reflect: true},
       top: {type: String, reflect: true},
       name: {type: String, reflect: true},
@@ -17,16 +16,24 @@ export class VideogameCard extends LitElement {
   }
 constructor() {
   super();
+  this.accentColor = 'pink';
   this.opened = false;
+
   this.top= "Mmmph";
   this.name = "Team Fortress 2 Pyroland";
+  this.picture = "https://images.gamebanana.com/img/ss/mods/54f8f277e231a.webp"
   this.details = "Details";
   this.paragraph1 = "This is a screenshot from a 3D rendered animation posted to Youtube by Valve Corporation to promote the video-game Team Fortress 2. The video is called 'Meet the Pyro'";
+}
+
+toggleDetails() {
+  this.shadow
 }
 
 ToggleEvent(e) {
   const state = this.shadowRoot.querySelector('details').getAttribute('open') === '' ? true: false;
   this.opened = state;
+  console.log(this.opened);
 }
 //--------------------------------------------HTML-RENDER-START---------------------------------------------------------------------------------
 render() {
@@ -38,30 +45,42 @@ render() {
   <p id="header1" class="header">${this.name}</p>
   <details class="details" .open="${this.opened}" @toggle="${this.ToggleEvent}">
     <summary class="summary">${this.details}</summary>
-      <ul>
-        <li><slot></slot></li>
-      </ul>
+        <slot></slot>
   </details>
-<!-- <img class="img" src=${character}> -->
-<meme-maker class="img" image-url="${character}" top-text="${this.top}"></meme-maker>
+<meme-maker class="img" image-url="${this.picture}" top-text="${this.top}"></meme-maker>
 </div>
 </div>
 <!-- End of Allen's card-->
   `;
   }
-
 //--------------------------------------------HTML-RENDER-END---------------------------------------------------------------------------------
 
   //--------------------------------------------CSS-START---------------------------------------------------------------------------------
 static get styles() {
   return css`
+
+:host([open-status=false]) .card {
+  background-color: white;
+}
+
+:host([accent-color='cyan']) .card {
+  background-color: cyan;
+  border: 14px solid #01E994;
+}
+:host([accent-color='pink']) .card {
+  background-color: #FB94FE;
+}:host([accent-color='orange']) .card {
+  background-color: orange;
+  border: 14px solid #E96D01;
+}
+
 .details {
   color: blue;
   font-family: "Monaco", Monospace;
   font-size: 20px;
   margin-left: 8px;
   margin-right: 8px;
-  visibility: hidden;
+  visibility: visible; //should he hidden by default
 }
 
 .summary { /*clickable part*/
@@ -75,22 +94,11 @@ static get styles() {
   padding: 4px;
 }
 
-.alt { /*alternative card for color toggle*/
-  width: 500px;
-  height: 565px;
-  border: 14px solid #72fc79;
-  background-color: cyan;
-  text-align: center;
-  border-radius: 20px;
-  margin: auto;
-  margin-bottom: 20px;
-}
-
 /*BELOW IS ALL ORIGINAL CARD SPACE*/
 
 .card {
   width: 500px;
-  height: 565px;
+  height: 600px;
   border: 14px solid pink;
   background-color: #FB94FE;
   text-align: center;
@@ -114,7 +122,7 @@ static get styles() {
   width: 460px;
   height: 260px;
   border: 2px inset #94FEFB;
-  padding: 8px;
+  padding: 10px;
   background-color: #ff66cc;
   border-radius: 20px;
   margin-left: auto;
