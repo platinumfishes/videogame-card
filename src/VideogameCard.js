@@ -39,7 +39,6 @@ ToggleEvent(e) {
 render() {
   return html`
 
-<div class='wrapper'>
 <!-- Allen's Card-->
 <div id="card1" class="card">
   <p id="header1" class="header">${this.name}</p>
@@ -48,7 +47,6 @@ render() {
         <slot></slot>
   </details>
 <meme-maker class="img" image-url="${this.picture}" top-text="${this.top}"></meme-maker>
-</div>
 </div>
 <!-- End of Allen's card-->
   `;
@@ -105,6 +103,7 @@ static get styles() {
   border-radius: 20px;
   margin: auto;
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .header {

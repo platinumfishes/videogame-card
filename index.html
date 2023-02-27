@@ -48,8 +48,6 @@
 
   <body>
     <div class="topbuttons">
-      <!-- <button @click="${this._addCard}" class="band-add-button">Add</button> -->
-      <!-- <button @click="${this.AddCard}">New Duplicate</button> -->
       <button class="Duplicate">New duplicate</button>
       <button class="Color">Toggle color</button>
       <button class="Header">Change heading</button>
@@ -69,29 +67,6 @@
     <script type="module" src="./src/videogame-card.js"></script>
     <!-----------------------------------JS-CUTOFF-------------------------------------------------------------------------------------------->
     <script>
-
-      // _addCard() {
-      //       const itemToClone = this.querySelector('videogame-card').cloneNode(true);
-      //       this.appendChild(itemToClone);
-      // }
-
-      // function _AddCard(e) {
-      //   const node1 = document.querySelector('videogame-card').cloneNode(true);
-      //   document.body.appendChild(node1);
-      //     }
-      //<!----------------------------------------------------------------------------------------------------------------------------------->
-      // <div class="band-taskbar">
-      //         <button @click="${this._addCard}" class="band-add-button">Add</button>
-      //         <button @click="${this._changeBackground}" class="band-background-button">Background</button>
-      //         <button @click="${this._toggleTitle}" class="band-title-button">Title</button>
-      //         <button @click="${this._deleteCard}" class="band-delete-button">Delete</button>
-      //       </div>
-
-      //<!----------------------------------------------------------------------------------------------------------------------------------->
-      
-      //New duplicate button
-
-
       //Duplicate button
       document.querySelector('.Duplicate').addEventListener('click', function() {
         const node1 = document.querySelector('videogame-card').cloneNode(true);
