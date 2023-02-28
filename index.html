@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background-color: #ededed;
+        background-image: url('https://wallpapers.com/images/hd/tf2-fantasy-pyroland-abturcq0atzsownx.jpg');
       }
 
       .topbuttons {
@@ -52,7 +52,7 @@
       <button class="Color">Toggle color</button>
       <button class="Header">Change heading</button>
       <button class="Delete">Delete 1 card</button>
-      <button onclick="toggleDetails()">Toggle details</button>
+      <button class="Toggle">Toggle details</button>
     </div>
     <videogame-card>
       <ul>
@@ -76,21 +76,26 @@
       //Color toggle button
       document.querySelector('.Color').addEventListener('click', function() {
         if (document.querySelector("videogame-card").accentColor == 'pink'){
-          document.querySelector("videogame-card").accentColor = 'cyan';
-        }
+          document.querySelectorAll('videogame-card').forEach((item)=>{
+            item.accentColor = 'cyan';
+          })}
         else if (document.querySelector("videogame-card").accentColor == 'cyan') {
-          document.querySelector("videogame-card").accentColor = 'orange';
-        }
+          document.querySelectorAll('videogame-card').forEach((item)=>{
+            item.accentColor = 'orange';
+          })}
         else if (document.querySelector("videogame-card").accentColor == 'orange') {
-          document.querySelector("videogame-card").accentColor = 'pink';
-        }
+          document.querySelectorAll('videogame-card').forEach((item)=>{
+            item.accentColor = 'pink';
+          })}
       });
 
       //Header toggle button
       document.querySelector('.Header').addEventListener('click', function(e) {
         let name = prompt("Pick name");
         if (name) {
-          document.querySelector('videogame-card').name = name;
+          document.querySelectorAll('videogame-card').forEach((item)=>{
+            item.name = name;
+          })
         }
       });
 
@@ -107,9 +112,12 @@
       });
       });
 
-      function toggleDetails() {
-        document.querySelector("videogame-card").toggleDetails();
-      }
+      //toggle details
+      document.querySelector('.Toggle').addEventListener('click', function(e) {
+        document.querySelectorAll('videogame-card').forEach((item)=>{
+        item.opened = !item.opened;
+      })
+    });
     </script>
     <!-----------------------------------JS-CUTOFF-------------------------------------------------------------------------------------------->
   </body>
