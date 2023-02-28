@@ -118,7 +118,7 @@ static get styles() {
   margin-left: 80px;
   margin-bottom: 20px;
   display: inline-block;
-  
+  vertical-align: text-bottom;
 }
 
 .card:hover {
