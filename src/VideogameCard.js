@@ -54,11 +54,11 @@ render() {
 <!-- Allen's Card-->
 <div id="card1" class="card">
   <p id="header1" class="header">${this.name}</p>
+  <meme-maker class="img" image-url="${this.picture}" top-text="${this.top}"></meme-maker>
   <details class="details" .open="${this.opened}" @toggle="${this.ToggleEvent}">
     <summary class="summary">${this.details}</summary>
         <slot class="list-item"></slot>
   </details>
-<meme-maker class="img" image-url="${this.picture}" top-text="${this.top}"></meme-maker>
 </div>
 <!-- End of Allen's card-->
   `;
@@ -70,7 +70,7 @@ static get styles() {
   return css`
 /* For Cyan (this has to be a better way to do this) */
 :host([accent-color='cyan']) .card {background-color: cyan; border: 14px solid #00ff73;}
-:host([accent-color='cyan']) .header {color: #45ffec; background-color: #00bdaa;}
+:host([accent-color='cyan']) .header {color: #00ff73; background-color: #00bdaa;}
 :host([accent-color='cyan']) .summary {color: #00ff73; border: 2px dashed #00ff73; background-color: #00bdaa;}
 :host([accent-color='cyan']) .img {border: 2px inset #45ffec; background-color: #00bdaa;}
 
@@ -101,9 +101,9 @@ static get styles() {
   border-radius: 40px;
   width: 120px;
   margin: auto;
+  margin-top: 10px;
   margin-bottom: 10px;
   padding: 4px;
-
 }
 
 /*BELOW IS ALL ORIGINAL CARD SPACE*/
@@ -115,7 +115,7 @@ static get styles() {
   background-color: #FB94FE;
   text-align: center;
   border-radius: 20px;
-  margin-left: 130px;
+  margin-left: 80px;
   margin-bottom: 20px;
   display: inline-block;
   
