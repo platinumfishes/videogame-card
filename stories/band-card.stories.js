@@ -1,9 +1,9 @@
 import { html } from 'lit';
-import '../src/videogame-card.js';
+import '../src/band-card.js';
 
 export default {
-  title: 'VideogameCard',
-  component: 'videogame-card',
+  title: 'BandCard',
+  component: 'band-card',
   argTypes: {
     backgroundColor: { control: 'color' },
   },
@@ -11,11 +11,11 @@ export default {
 
 function Template({ title, backgroundColor }) {
   return html`
-    <videogame-card
-      style="--videogame-card-background-color: ${backgroundColor || 'white'}"
+    <band-card
+      style="--band-card-background-color: ${backgroundColor || 'white'}"
       .title=${title}
     >
-    </videogame-card>
+    </band-card>
   `;
 }
 

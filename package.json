@@ -1,9 +1,10 @@
 {
-  "name": "videogame-card",
-  "description": "Webcomponent videogame-card following open-wc recommendations",
+  "name": "band-card",
+  "description": "Webcomponent band-card following open-wc recommendations",
   "license": "MIT",
-  "author": "videogame-card",
+  "author": "band-card",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "test": "web-test-runner --coverage",
     "test:watch": "web-test-runner --watch",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "@lrnwebcomponents/meme-maker": "^4.1.0",
+    "esbuild": "^0.17.8",
     "lit": "^2.0.2"
   },
   "devDependencies": {
@@ -34,7 +36,7 @@
     "deepmerge": "^4.2.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.60.0",
-    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-workbox": "^6.2.0"
   },
   "customElements": "custom-elements.json"

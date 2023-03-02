@@ -1,12 +1,12 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../src/videogame-card.js';
+import '../src/band-card.js';
 
-describe('VideogameCard', () => {
+describe('BandCard', () => {
   let element;
   beforeEach(async () => {
-    element = await fixture(html`<videogame-card></videogame-card>`);
+    element = await fixture(html`<band-card></band-card>`);
   });
 
   it('renders a h1', () => {
