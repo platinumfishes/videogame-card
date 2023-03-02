@@ -42,7 +42,6 @@ updated(changedProperties){
           value: this[propName]
         }
       }));
-      console.log(`${propName} changed. oldValue: ${oldValue}`);
     }
   });
 }
@@ -74,11 +73,12 @@ static get styles() {
 :host([accent-color='cyan']) .summary {color: #00ff73; border: 2px dashed #00ff73; background-color: #00bdaa;}
 :host([accent-color='cyan']) .img {border: 2px inset #45ffec; background-color: #00bdaa;}
 
-
 :host([accent-color='orange']) .card {background-color: orange; border: 14px solid #E96D01;}
 :host([accent-color='orange']) .header {color: #ff3819; background-color: #ffb82b;}
 :host([accent-color='orange']) .summary {color: #ff3819; border: 2px dashed #e7ff70; background-color: #ffb82b;}
 :host([accent-color='orange']) .img {border: 2px inset #e7ff70; background-color: #ff8b2b;}
+
+:host([])
 
 .list-item {
   position: absolute;
@@ -101,8 +101,7 @@ static get styles() {
   border-radius: 40px;
   width: 120px;
   margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 12px;
   padding: 4px;
 }
 
@@ -110,7 +109,7 @@ static get styles() {
 
 .card {
   width: 500px;
-  height: 580px;
+  height: 560px;
   border: 14px solid pink;
   background-color: #FB94FE;
   text-align: center;
@@ -118,7 +117,7 @@ static get styles() {
   margin-left: 80px;
   margin-bottom: 20px;
   display: inline-block;
-  vertical-align: text-bottom;
+  vertical-align: text-top;
 }
 
 .card:hover {
