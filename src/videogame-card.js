@@ -2,26 +2,25 @@ import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
 class VideogameCard extends LitElement {
-  static properties() {
+  static get properties() {
     return {
       accentColor: {type: String, reflect: true, attribute: 'accent-color'},
       opened: {type: Boolean, reflect: true},
       shadowstatus: {type: Boolean, reflect: true},
       toptext: {type: String, reflect: true},
       name: {type: String, reflect: true},
-      details: {type: String, reflect: true},
-      paragraph1: {type: String, reflect: true},
-      paragraph2: {type: String, reflect: true},
+      detailstext: {type: String},
+      picture: {type: String}
     }
   }
 constructor() {
   super();
   this.accentColor = 'pink';
   this.opened = false;
-  this.toptext = "Mmmph";
+  this.toptext = "Mmmph meme";
   this.name = "Team Fortress 2 Pyroland";
   this.picture = "https://images.gamebanana.com/img/ss/mods/54f8f277e231a.webp"
-  this.details = "Details";
+  this.detailstext = "Details";
   this.paragraph1 = "This is a screenshot from a 3D rendered animation posted to Youtube by Valve Corporation to promote the video-game Team Fortress 2. The video is called 'Meet the Pyro'";
 }
 
@@ -54,7 +53,7 @@ render() {
   <p id="header1" class="header">${this.name}</p>
   <meme-maker class="img" image-url="${this.picture}" top-text="${this.toptext}"></meme-maker>
   <details class="details" .open="${this.opened}" @toggle="${this.ToggleEvent}">
-    <summary class="summary">${this.details}</summary>
+    <summary class="summary">${this.detailstext}</summary>
         <slot class="list-item"></slot>
   </details>
 </div>
@@ -63,7 +62,7 @@ render() {
   }
 //--------------------------------------------HTML-RENDER-END---------------------------------------------------------------------------------
 
-  //--------------------------------------------CSS-START---------------------------------------------------------------------------------
+//--------------------------------------------CSS-START---------------------------------------------------------------------------------
 static get styles() {
   return css`
 /* For Cyan (this has to be a better way to do this) */
@@ -101,6 +100,7 @@ static get styles() {
   width: 120px;
   margin: auto;
   margin-top: 12px;
+  margin-bottom: -12px;
   padding: 4px;
 }
 
