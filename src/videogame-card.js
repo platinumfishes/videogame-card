@@ -7,7 +7,7 @@ class VideogameCard extends LitElement {
       accentColor: {type: String, reflect: true, attribute: 'accent-color'},
       opened: {type: Boolean, reflect: true},
       shadowstatus: {type: Boolean, reflect: true},
-      top: {type: String, reflect: true},
+      toptext: {type: String, reflect: true},
       name: {type: String, reflect: true},
       details: {type: String, reflect: true},
       paragraph1: {type: String, reflect: true},
@@ -18,8 +18,7 @@ constructor() {
   super();
   this.accentColor = 'pink';
   this.opened = false;
-
-  this.top= "Mmmph";
+  this.toptext = "Mmmph";
   this.name = "Team Fortress 2 Pyroland";
   this.picture = "https://images.gamebanana.com/img/ss/mods/54f8f277e231a.webp"
   this.details = "Details";
@@ -53,7 +52,7 @@ render() {
 <!-- Allen's Card-->
 <div id="card1" class="card">
   <p id="header1" class="header">${this.name}</p>
-  <meme-maker class="img" image-url="${this.picture}" top-text="${this.top}"></meme-maker>
+  <meme-maker class="img" image-url="${this.picture}" top-text="${this.toptext}"></meme-maker>
   <details class="details" .open="${this.opened}" @toggle="${this.ToggleEvent}">
     <summary class="summary">${this.details}</summary>
         <slot class="list-item"></slot>

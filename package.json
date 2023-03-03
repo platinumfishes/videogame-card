@@ -1,5 +1,5 @@
 {
-  "name": "videogame-card2",
+  "name": "@prettywebcomponents/videogame-card2",
   "description": "Webcomponent band-card following open-wc recommendations",
   "license": "MIT",
   "author": "videogame-card2",
@@ -39,5 +39,17 @@
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-workbox": "^6.2.0"
   },
-  "customElements": "custom-elements.json"
+  "customElements": "custom-elements.json",
+  "main": "rollup.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platinumfishes/videogame-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/platinumfishes/videogame-card/issues"
+  },
+  "homepage": "https://github.com/platinumfishes/videogame-card#readme"
 }
