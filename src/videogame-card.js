@@ -17,7 +17,7 @@ constructor() {
   super();
   this.accentColor = 'pink';
   this.opened = false;
-  this.toptext = "Mmmph meme";
+  this.toptext = "Mmmph";
   this.name = "Team Fortress 2 Pyroland";
   this.picture = "https://images.gamebanana.com/img/ss/mods/54f8f277e231a.webp"
   this.detailstext = "Details";
@@ -184,5 +184,5 @@ box-shadow: 0px 0px 151px 0px rgba(45,255,196,0.55);
   `;
 }
 //--------------------------------------------CSS-END---------------------------------------------------------------------------------
-}
+} 
 customElements.define('videogame-card', VideogameCard);
