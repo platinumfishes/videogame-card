@@ -40,8 +40,21 @@ class ClassRoster extends LitElement {
             this.classes = data;
         });
 
-        await fetch(new URL('../assets/roster.json', import.meta.url).href).then(data => data   );
+        await fetch(new URL('../api/roster.js', import.meta.url).href).then(data => data);
     }
+
+    // updateRoster() {
+    //     const address = new URL('../api/roster.js', import.meta.url).href;
+    //     fetch(address).then((response) => {
+    //         if (response.ok) {
+    //             return response.json()
+    //         }
+    //         return [];
+    //     })
+    //     .then((data) => {
+    //         this.classes = data;
+    //     });
+    // }
 
     static get styles() { 
         return css`
