@@ -22,7 +22,7 @@ export default async function handler(request, res) {
             "accentColor": "pink",
             "picture": "https://i.ytimg.com/vi/bgs9OhjAE2g/maxresdefault.jpg",
             "name": "Spy",
-            "toptext": "Kill me",
+            "toptext": "Kill me pls",
             "detailstext": "Details",
             "paragraph1": "This is a screenshot from a 3D rendered animation posted to Youtube by Valve Corporation to promote the video-game Team Fortress 2. The video is called 'Meet the Pyro'"
         }
