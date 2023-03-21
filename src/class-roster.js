@@ -40,7 +40,7 @@ class ClassRoster extends LitElement {
             this.classes = data;
         });
 
-        await fetch(new URL('../api/roster.js', import.meta.url).href).then(data => data);
+        await fetch(new URL('../assets/roster.json', import.meta.url).href).then(data => data);
     }
 
     // updateRoster() {
