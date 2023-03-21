@@ -78,7 +78,14 @@ class ClassRoster extends LitElement {
             <div class="wrapper">
                 ${this.classes.map(classchar => html`
                 <div class="items">
-                    <videogame-card accentColor="${classchar.accentColor}" opened="${classchar.opened}" toptext="${classchar.toptext}" name="${classchar.name}" picture="${classchar.picture}" detailstext="${classchar.detailstext}" paragraph1="${classchar.paragraph1}">This is a screenshot from a 3D rendered animation posted to Youtube by Valve Corporation to promote the video-game Team Fortress 2. The video is called 'Meet the Pyro'</videogame-card>
+                    <videogame-card accentColor="${classchar.accentColor}" opened="${classchar.opened}" toptext="${classchar.toptext}" name="${classchar.name}" picture="${classchar.picture}" detailstext="${classchar.detailstext}" paragraph1="${classchar.paragraph1}">      <ul>
+                    <li>
+                      This is a screenshot from a 3D rendered animation posted to Youtube by
+                      Valve Corporation to promote the video-game Team Fortress 2.
+                    </li>
+                    <li>The video is called 'Meet the Pyro'</li>
+                  </ul>
+                  </videogame-card>
                 <div>
                 `)}
             </div>
