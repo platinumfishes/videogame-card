@@ -65,7 +65,7 @@ render() {
 //--------------------------------------------CSS-START---------------------------------------------------------------------------------
 static get styles() {
   return css`
-/* For Cyan (this has to be a better way to do this) */
+/* For Cyan (there has to be a better way to do this) */
 :host([accent-color='cyan']) .card {background-color: cyan; border: 14px solid #00ff73;}
 :host([accent-color='cyan']) .header {color: #00ff73; background-color: #00bdaa;}
 :host([accent-color='cyan']) .summary {color: #00ff73; border: 2px dashed #00ff73; background-color: #00bdaa;}
@@ -76,7 +76,10 @@ static get styles() {
 :host([accent-color='orange']) .summary {color: #ff3819; border: 2px dashed #e7ff70; background-color: #ffb82b;}
 :host([accent-color='orange']) .img {border: 2px inset #e7ff70; background-color: #ff8b2b;}
 
-:host([])
+:host([accent-color='teamfortress']) .card {background-color: orange; border: 14px solid #E96D01;}
+:host([accent-color='teamfortress']) .header {color: #ff3819; background-color: #ffb82b;}
+:host([accent-color='teamfortress']) .summary {color: #ff3819; border: 2px dashed #e7ff70; background-color: #ffb82b;}
+:host([accent-color='teamfortress']) .img {border: 2px inset #e7ff70; background-color: #ff8b2b;}
 
 .list-item {
   position: absolute;
