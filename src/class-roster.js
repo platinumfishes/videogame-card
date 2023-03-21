@@ -29,7 +29,8 @@ class ClassRoster extends LitElement {
 
     async updateRoster() {
         //const address = new URL('../api/roster.js', import.meta.url).href;
-        const address = new URL('../assets/roster.json', import.meta.url).href;
+        //const address = new URL('../assets/roster.json', import.meta.url).href;
+        const address = '../api/roster.js';
         fetch(address).then((response) => {
             if (response.ok) {
                 return response.json()
@@ -40,7 +41,7 @@ class ClassRoster extends LitElement {
             this.classes = data;
         });
 
-        await fetch(new URL('../assets/roster.json', import.meta.url).href).then(data => data);
+        //await fetch(new URL('../api/roster.js', import.meta.url).href).then(data => data);
     }
 
     // updateRoster() {
